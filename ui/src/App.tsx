@@ -15,6 +15,7 @@ const theme = createTheme({
 
 
 export const App: React.FC = () => {
+  
   return (
     <BrowserRouter>
       <ContractsProvider>
