@@ -28,7 +28,6 @@ export const IssueToSelfForm: React.FC<IssueToSelfFormProps> = ({ ticker, handle
   const contractsContext = React.useContext(ContractsContext)
 
   const onIssue = () => {
-    
     const asset = contractsContext.state.assetAccounts[ticker]
     if (asset) {
       setLoading(true);
