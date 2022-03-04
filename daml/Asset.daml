@@ -74,6 +74,8 @@ template Asset
         mergeAsset <- fetch mergeAssetCid
         assertMsg "Asset types do not match" $
           assetType == mergeAsset.assetType
+        assertMsg "Asser owners do not match" $
+          owner == mergeAsset.owner
         archive mergeAssetCid
         create this with
           amount = amount + mergeAsset.amount
