@@ -55,8 +55,8 @@ template Asset
       controller owner
       do
         assertMsg "Non fungible asset cannot be split" assetType.fungible
-        assertMsg "Split amount must be smaller than the original asset amount" $
-          splitAmount <= amount
+        assertMsg "Split amount must be between 0.0 and " <> show amount $
+          (splitAmount < amount && splitAmount > 0)
         cid1 <- create this with
           amount = splitAmount
         cid2 <- create this with
